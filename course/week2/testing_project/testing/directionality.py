@@ -146,28 +146,8 @@ class MNISTDirectionalityTest(BaseTest):
       preds_raw = torch.argmax(logits_raw, dim=1)
       preds_transformed = torch.argmax(logits_transformed, dim=1)
 
-      batch_metric = 0  # store metric here
-      # ================================
-      # FILL ME OUT
-      # 
-      # Compute the fraction of times the transformed images maintains 
-      # the same prediction. Store this in the `batch_metric` variable.
-      # 
-      # Make sure batch_metric is a floating point number, not a torch.Tensor.
-      # You can extract a value from a torch.Tensor with `.item()`.
-      # 
-      # Our solution is one line of code.
-      # 
-      # Pseudocode:
-      # --
-      # batch_metric = ...
-      # 
-      # Type:
-      # --
-      # batch_metric: float (not torch.Tensor!)
-      #   Metric computed on a minibatch
-      pass  # remove me
-      # ================================
+      # Compute the fraction of predictions that remain the same
+      batch_metric = (preds_raw == preds_transformed).float().mean().item()
       metric.append(batch_metric)
       pbar.update()
     pbar.close()
