@@ -17,3 +17,7 @@ Then, run the following:
 gdown --id 1hdwWYFNJiCI_zFHWTMce6TETyj20GHG9
 ```
 This will download a 3gb file of precomputed text embeddings to a file `data.zip`. Unzip the file and replace `monitor_project/data` with the unzipped folder. 
+
+# README
+BASELINE ACCURACY  : EN : 0.8876953125, SP: 0.544677734375%
+RETRAINED ACCURACY : EN : 0.882080078125, SP: 0.72412109375%
